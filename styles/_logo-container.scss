@@ -1,0 +1,27 @@
+@use "./utilities";
+
+.logo-container {
+  button {
+    border: none;
+  }
+}
+
+// .hamburger {
+//   display: none;
+// }
+
+.hamburger.active {
+  display: inline;
+}
+
+.close {
+  display: none;
+}
+
+.close.active {
+  display: inline;
+}
+
+.logo {
+  margin-left: 0.5rem;
+}

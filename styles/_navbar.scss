@@ -1,0 +1,23 @@
+@use "./utilities";
+@use "logo-container";
+@use "shopping-cart";
+
+.nav-container {
+  width: 100%;
+  background-color: utilities.$white;
+  padding: 1.25rem;
+  @include utilities.flex(space-between, center);
+}
+
+.navbar {
+  display: none;
+}
+
+.nav-list {
+}
+
+.nav-item {
+}
+
+.nav-link {
+}
