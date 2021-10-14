@@ -18,6 +18,7 @@
 
 <body>
   <!-- Header/Navigation section -->
+  <div class="overlay"></div>
   <header>
     <!-- Navbar begins -->
     <div class="nav-container">
@@ -104,16 +105,16 @@
     <section class="product-images">
       <article class="product product-main" id="product1">
         <!-- Previous button -->
-        <button class="left">
+        <button class="left" id="leftArrow">
           <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
             <path class="previous" d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none"
               fill-rule="evenodd" />
           </svg>
         </button>
         <!-- Main product image -->
-        <img src="styles/images/image-product-1.jpg" alt="" class="main-img">
+        <img src="styles/images/image-product-1.jpg" alt="" class="main-img" id="mainImg">
         <!-- Next button -->
-        <button class="right">
+        <button class="right" id="rightArrow">
           <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
             <path class="next" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
           </svg>

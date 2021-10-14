@@ -14,3 +14,19 @@ body {
   font-size: 16px;
   font-family: utilities.$kumbh;
 }
+
+.overlay {
+  display: none;
+}
+
+.overlay.active {
+  display: inline;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: utilities.$black;
+  opacity: 70%;
+}

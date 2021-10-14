@@ -19,7 +19,7 @@
 
 .shopping-cart-container {
   position: absolute;
-  top: 13%;
+  top: 11%;
   left: 0;
   width: 99.9vw;
   @include utilities.flex(center, center);
@@ -31,7 +31,7 @@
   padding: 1rem;
   background-color: utilities.$white;
   width: 95%;
-  height: 45vh;
+  height: 40vh;
   border-radius: 1rem;
   z-index: 11;
 }
