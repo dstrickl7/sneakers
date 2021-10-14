@@ -106,5 +106,24 @@ const removeItem = () => {
 };
 
 increase.addEventListener("click", addItem);
-
 decrease.addEventListener("click", removeItem);
+
+// Display notification if items in cart
+
+let notification = document.querySelector(".notification");
+
+console.log(numDisplay.textContent);
+
+const displayNotification = () => {
+  // Displays outside of function
+  // if statement not working properly, possibly b/c type !=
+  if (numDisplay.textContent != 0) {
+    notification.classList.toggle("active");
+    notification.textContent = numDisplay.textContent;
+  }
+};
+
+displayNotification();
+
+// Figure out what type numDisplay.textContent is
+// I only want the number on the notification to change if Add to cart btn pushed

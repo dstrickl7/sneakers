@@ -33,6 +33,26 @@
   fill: black;
 }
 
+.cart-button-container {
+  position: relative;
+}
+
+.notification.active {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -30%;
+  right: 20%;
+  border-radius: 40%;
+  width: 1.2rem;
+  height: 1rem;
+  background-color: #ff7d1a;
+  color: white;
+  font-size: 0.7rem;
+}
+
 .shopping-cart-container {
   position: absolute;
   top: 11%;

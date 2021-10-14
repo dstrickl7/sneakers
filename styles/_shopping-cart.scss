@@ -17,6 +17,23 @@
   }
 }
 
+.cart-button-container {
+  position: relative;
+}
+
+.notification.active {
+  @include utilities.flex(center, center);
+  position: absolute;
+  top: -30%;
+  right: 20%;
+  border-radius: 40%;
+  width: 1.2rem;
+  height: 1rem;
+  background-color: utilities.$orange;
+  color: utilities.$white;
+  font-size: 0.7rem;
+}
+
 .shopping-cart-container {
   position: absolute;
   top: 11%;
