@@ -7,17 +7,49 @@
   background-color: utilities.$white;
   padding: 1.25rem;
   @include utilities.flex(space-between, center);
+  z-index: 10;
+  button {
+    background-color: transparent;
+    border: none;
+  }
 }
 
 .navbar {
   display: none;
 }
 
-.nav-list {
+.navbar.active {
+  @include utilities.flex(normal, flex-start, column);
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: 100vh;
+  width: 50%;
+  background-color: utilities.$white;
+}
+
+.close {
+  display: none;
+}
+
+.close.active {
+  display: inline;
+  margin: 1rem 0;
+}
+
+.navlist {
+  margin-top: 2rem;
 }
 
 .nav-item {
+  list-style: none;
+  padding: 0.5rem 0;
+  font-weight: 700;
 }
 
-.nav-link {
+.navlink {
+  text-decoration: none;
+  color: utilities.$black;
 }

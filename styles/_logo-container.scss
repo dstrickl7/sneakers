@@ -7,20 +7,12 @@
   }
 }
 
-// .hamburger {
-//   display: none;
-// }
+.hamburger {
+  display: inline;
+}
 
 .hamburger.active {
-  display: inline;
-}
-
-.close {
   display: none;
-}
-
-.close.active {
-  display: inline;
 }
 
 .logo {
