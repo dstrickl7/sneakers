@@ -55,8 +55,8 @@ images[3].src = "styles/images/image-product-4.jpg";
 
 // Switch images in carousel
 let mainImg = document.getElementById("mainImg");
-let next = document.getElementById("rightArrow");
-let prev = document.getElementById("leftArrow");
+const next = document.getElementById("rightArrow");
+const prev = document.getElementById("leftArrow");
 
 mainImg.src = images[i].src;
 
@@ -83,3 +83,28 @@ const prevImage = () => {
 
 prev.addEventListener("click", prevImage);
 next.addEventListener("click", nextImage);
+
+// Display number of items
+const increase = document.getElementById("increaseItem");
+const decrease = document.getElementById("decreaseItem");
+const numDisplay = document.getElementById("numDisplay");
+let j = 0;
+numDisplay.textContent = j;
+const addItem = () => {
+  j++;
+  numDisplay.textContent = j;
+};
+
+const removeItem = () => {
+  if (j > 0) {
+    j--;
+    numDisplay.textContent = j;
+  } else {
+    j = 0;
+    numDisplay.textContent = j;
+  }
+};
+
+increase.addEventListener("click", addItem);
+
+decrease.addEventListener("click", removeItem);
