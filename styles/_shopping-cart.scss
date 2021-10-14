@@ -39,11 +39,10 @@
   @include utilities.flex(center, flex-start, column);
 }
 
-.shopping-cart {
+.shopping-cart.active.items {
   @include utilities.flex(space-between, flex-start, column);
 }
 
-// .active.items
 .cart-title {
   width: 100%;
   padding-bottom: 1rem;
@@ -76,16 +75,27 @@
   border-radius: 0.25rem;
 }
 
-.product-name {
-  color: utilities.$gblue;
-  font-weight: 700;
+.item-info-container {
   font-size: 0.85rem;
 }
 
+.price-container {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-name {
+  color: utilities.$gblue;
+  font-weight: 700;
+}
+
 .product-price {
+  color: utilities.$gblue;
 }
 
 .cart-total {
+  font-weight: 700;
 }
 
 .no-items {

@@ -65,7 +65,7 @@
   align-items: flex-start;
 }
 
-.shopping-cart {
+.shopping-cart.active.items {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -112,10 +112,27 @@
   border-radius: 0.25rem;
 }
 
+.item-info-container {
+  font-size: 0.85rem;
+}
+
+.price-container {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .product-name {
   color: #b6bcc8;
   font-weight: 700;
-  font-size: 0.85rem;
+}
+
+.product-price {
+  color: #b6bcc8;
+}
+
+.cart-total {
+  font-weight: 700;
 }
 
 .no-items {
