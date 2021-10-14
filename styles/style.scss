@@ -1,5 +1,8 @@
 @use "./utilities";
 @use "navbar";
+@use "products";
+@use "lightbox";
+@use "product-descriptions";
 
 * {
   box-sizing: border-box;

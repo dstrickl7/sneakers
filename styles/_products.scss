@@ -1,0 +1,48 @@
+@use "./utilities";
+
+.product-images {
+  position: relative;
+  height: 50vh;
+}
+.product {
+}
+.product-main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  button {
+    position: absolute;
+    @include utilities.flex(center, center);
+    top: 50%;
+    border: none;
+    background-color: utilities.$white;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.left {
+  left: 5%;
+}
+
+.right {
+  right: 5%;
+}
+
+.previous {
+}
+
+.next {
+}
+
+.product-thumbnail {
+  display: none;
+}
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumbnail-img {
+}
