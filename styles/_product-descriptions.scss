@@ -2,27 +2,65 @@
 
 .product-description-section {
   position: relative;
+  padding: 1rem;
+  padding-bottom: 3rem;
 }
 
-.product-name {
+.company-name {
+  font-weight: 700;
+  color: utilities.$orange;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.product-description-name {
+  font-size: 1.75rem;
+  padding: 0.5rem 0;
 }
 
 .product-description {
+  color: utilities.$dgblue;
+  line-height: 1.5rem;
 }
 
 .product-price-container {
+  width: 100%;
+  padding: 0.5rem 0;
+  @include utilities.flex(space-between, center);
+  font-weight: 700;
+}
+
+.current-price-container {
+  @include utilities.flex(normal, center);
 }
 
 .product-current-price {
+  font-size: 1.5rem;
 }
 
 .discount {
+  color: utilities.$orange;
+  background-color: utilities.$porange;
+  margin: 0 0.5rem;
+  padding: 0.15rem 0.3rem;
+  font-size: 0.9rem;
 }
 
 .product-original-price {
+  color: utilities.$gblue;
 }
 
 .item-count-container {
+  @include utilities.flex(space-between, center);
+  background-color: utilities.$lgblue;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  button {
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    width: 2rem;
+  }
 }
 
 .decrease {
@@ -32,10 +70,25 @@
 }
 
 .number-display {
+  font-weight: 700;
 }
 
 .add-btn {
+  @include utilities.flex(center, center);
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: utilities.$orange;
+  color: utilities.$white;
+  font-weight: 700;
+  box-shadow: 0 25px 50px utilities.$porange;
+  svg {
+    margin-right: 0.5rem;
+  }
 }
 
 .cart-white {
+  fill: utilities.$white;
 }
