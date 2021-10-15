@@ -114,12 +114,6 @@ const displayNotification = () => {
 
 addBtn.addEventListener("click", displayNotification);
 
-// Display items in cart once added
-
-const displayItems = () => {};
-
-displayItems();
-
 // Shopping cart functionality
 const cart = document.querySelector(".nav-cart");
 const shoppingCart = document.querySelector(".shopping-cart");
@@ -129,15 +123,28 @@ const checkout = document.querySelector(".checkout");
 let total = document.querySelector(".cart-total");
 let price = document.querySelector(".product-price");
 
+// Display items in cart once added
 cart.addEventListener("click", () => {
   if (haveItems === true) {
     shoppingCart.classList.toggle("active");
     items.classList.toggle("active");
     checkout.classList.toggle("active");
-    price.textContent = "$125 x" + numDisplay.textContent;
+    price.textContent = "$125 x " + numDisplay.textContent;
     total.textContent = "$" + 125 * Number(numDisplay.textContent);
   } else {
     shoppingCart.classList.toggle("active");
     noItems.classList.toggle("active");
   }
+});
+
+// Remove items in cart
+const remove = document.querySelector("#remove");
+
+remove.addEventListener("click", () => {
+  items.classList.toggle("active");
+  checkout.classList.toggle("active");
+  noItems.classList.toggle("active");
+  haveItems = false;
+  notification.classList.toggle("active");
+  notification.textContent = "";
 });
