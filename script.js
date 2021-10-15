@@ -29,16 +29,6 @@ if (document.documentElement.clientWidth < 1024) {
   );
 }
 
-// Shopping cart functionality
-const cart = document.querySelector(".nav-cart");
-const shoppingCart = document.querySelector(".shopping-cart");
-const items = document.querySelector(".item");
-const noItems = document.querySelector(".no-items");
-cart.addEventListener("click", () => {
-  shoppingCart.classList.toggle("active");
-  noItems.classList.toggle("active");
-});
-
 // Setting up images for carousel
 let i = 0;
 
@@ -112,12 +102,42 @@ decrease.addEventListener("click", removeItem);
 
 let notification = document.querySelector(".notification");
 const addBtn = document.getElementById("addBtn");
+let haveItems = false;
 
 const displayNotification = () => {
   if (Number(numDisplay.textContent) !== 0) {
     notification.classList.toggle("active");
     notification.textContent = numDisplay.textContent;
+    haveItems = true;
   }
 };
 
 addBtn.addEventListener("click", displayNotification);
+
+// Display items in cart once added
+
+const displayItems = () => {};
+
+displayItems();
+
+// Shopping cart functionality
+const cart = document.querySelector(".nav-cart");
+const shoppingCart = document.querySelector(".shopping-cart");
+const items = document.querySelector(".item");
+const noItems = document.querySelector(".no-items");
+const checkout = document.querySelector(".checkout");
+let total = document.querySelector(".cart-total");
+let price = document.querySelector(".product-price");
+
+cart.addEventListener("click", () => {
+  if (haveItems === true) {
+    shoppingCart.classList.toggle("active");
+    items.classList.toggle("active");
+    checkout.classList.toggle("active");
+    price.textContent = "$125 x" + numDisplay.textContent;
+    total.textContent = "$" + 125 * Number(numDisplay.textContent);
+  } else {
+    shoppingCart.classList.toggle("active");
+    noItems.classList.toggle("active");
+  }
+});
