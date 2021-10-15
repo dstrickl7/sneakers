@@ -103,12 +103,18 @@ decrease.addEventListener("click", removeItem);
 let notification = document.querySelector(".notification");
 const addBtn = document.getElementById("addBtn");
 let haveItems = false;
+let itemCount = 0;
 
 const displayNotification = () => {
-  if (Number(numDisplay.textContent) !== 0) {
+  if (Number(numDisplay.textContent) !== 0 && haveItems === false) {
     notification.classList.toggle("active");
     notification.textContent = numDisplay.textContent;
     haveItems = true;
+  } else if (Number(numDisplay.textContent) !== 0 && haveItems === true) {
+    notification.textContent =
+      Number(notification.textContent) + Number(numDisplay.textContent);
+    haveItems = true;
+    itemCount = notification.textContent;
   }
 };
 
@@ -129,8 +135,8 @@ cart.addEventListener("click", () => {
     shoppingCart.classList.toggle("active");
     items.classList.toggle("active");
     checkout.classList.toggle("active");
-    price.textContent = "$125 x " + numDisplay.textContent;
-    total.textContent = "$" + 125 * Number(numDisplay.textContent);
+    price.textContent = "$125 x " + Number(notification.textContent);
+    total.textContent = "$" + 125 * Number(notification.textContent);
   } else {
     shoppingCart.classList.toggle("active");
     noItems.classList.toggle("active");
