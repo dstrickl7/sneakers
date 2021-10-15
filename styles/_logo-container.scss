@@ -1,5 +1,6 @@
 @use "./utilities";
 
+// Mobile screens
 .logo-container {
   button {
     border: none;
@@ -18,3 +19,16 @@
 .logo {
   margin-left: 0.5rem;
 }
+
+// Screens >=768px
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .logo-container {
+    @include utilities.flex(normal, center);
+  }
+}
+
+// Screens >=1440px

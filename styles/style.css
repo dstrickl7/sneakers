@@ -15,6 +15,18 @@
   margin-left: 0.5rem;
 }
 
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    align-items: center;
+  }
+}
 .cart-container {
   display: flex;
   flex-direction: row;
@@ -180,6 +192,68 @@
   width: 1.5rem;
 }
 
+@media (min-width: 768px) {
+  .cart-container {
+    order: 3;
+  }
+
+  .nav-cart {
+    margin-right: 2rem;
+  }
+
+  .notification.active {
+    top: -35%;
+    right: 45%;
+  }
+
+  .shopping-cart-container {
+    left: 60%;
+    width: 40vw;
+  }
+
+  .shopping-cart {
+    height: 35vh;
+  }
+
+  .cart-black:hover {
+    fill: black;
+    cursor: pointer;
+  }
+  .cart-black:active {
+    fill: black;
+  }
+
+  .item-info-container {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .price-container {
+    justify-content: flex-start;
+  }
+
+  .cart-total {
+    margin-left: 0.5rem;
+  }
+
+  .no-items.active {
+    font-size: 1rem;
+  }
+
+  .avatar {
+    width: 2.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .shopping-cart-container {
+    left: 67%;
+    width: 30vw;
+  }
+
+  .cart-thumbnail {
+    width: 3.5rem;
+  }
+}
 .nav-container {
   width: 100%;
   background-color: white;
@@ -209,7 +283,7 @@
   bottom: 0;
   left: 0;
   z-index: 2;
-  height: 100vh;
+  height: 100%;
   width: 65%;
   background-color: white;
 }
@@ -238,6 +312,45 @@
   color: black;
 }
 
+@media (min-width: 768px) {
+  .nav-container {
+    border-bottom: solid #68707d 0.1rem;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .navlist {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+  }
+
+  .nav-item {
+    padding: 0 1rem;
+  }
+
+  .navlink {
+    color: #68707d;
+  }
+}
+@media (min-width: 1024px) {
+  .nav-container {
+    padding: 2rem 6rem;
+  }
+}
 .product-images {
   position: relative;
   height: 50vh;

@@ -1,4 +1,4 @@
-// Navlist functionality
+// Navbar functionality
 const navbar = document.querySelector(".navbar");
 const navitem = document.querySelectorAll(".navitem");
 const close = document.getElementById("close");
@@ -143,7 +143,7 @@ cart.addEventListener("click", () => {
   }
 });
 
-// Remove items in cart
+// Remove items in cart and remove notification
 const remove = document.querySelector("#remove");
 
 remove.addEventListener("click", () => {
@@ -154,3 +154,5 @@ remove.addEventListener("click", () => {
   notification.classList.toggle("active");
   notification.textContent = "";
 });
+
+// Lightbox
