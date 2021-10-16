@@ -54,6 +54,7 @@
 .navlink {
   text-decoration: none;
   color: utilities.$black;
+  cursor: pointer;
 }
 
 // Screens >=768px
@@ -83,6 +84,11 @@
 
   .navlink {
     color: utilities.$dgblue;
+    padding-bottom: 2.5rem;
+    &:hover {
+      color: utilities.$black;
+      border-bottom: solid utilities.$orange 0.25rem;
+    }
   }
 }
 
@@ -95,5 +101,6 @@
   .nav-container {
     width: 80vw;
     padding: 2rem 6rem;
+    font-size: calc(0.5rem + 0.75vw);
   }
 }

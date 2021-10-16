@@ -1,5 +1,6 @@
 @use "./utilities";
 
+// Mobile layout
 .product-description-section {
   position: relative;
   padding: 1rem;
@@ -61,13 +62,8 @@
     background-color: transparent;
     height: 100%;
     width: 2rem;
+    cursor: pointer;
   }
-}
-
-.decrease {
-}
-
-.increase {
 }
 
 .number-display {
@@ -85,6 +81,7 @@
   color: utilities.$white;
   font-weight: 700;
   box-shadow: 0 25px 50px utilities.$porange;
+  cursor: pointer;
   svg {
     margin-right: 0.5rem;
   }
@@ -94,10 +91,78 @@
   fill: utilities.$white;
 }
 
+// Tablet layout
 @media (min-width: 768px) {
   .product-description-section {
     position: unset;
     width: 50%;
     height: 80vh;
+    @include utilities.flex(center, flex-start, column);
+  }
+
+  .product-description-name {
+    width: 75%;
+  }
+
+  .product-description {
+    width: 75%;
+  }
+
+  .add-to-cart-container {
+    @include utilities.flex(normal, center);
+  }
+
+  .item-count-container {
+    width: 50%;
+    button {
+      width: 100%;
+      height: 100%;
+      @include utilities.flex(center, center);
+      padding: 0.5rem;
+      &:active {
+        opacity: 70%;
+      }
+    }
+  }
+
+  .add-btn {
+    margin: 0;
+    margin-left: 1rem;
+    &:hover {
+      opacity: 70%;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .company-name {
+    font-size: calc(1rem + 0.1vw);
+  }
+
+  .product-description-name {
+    font-size: calc(1rem + 2vw);
+    padding-bottom: 2rem;
+  }
+
+  .product-description {
+    font-size: calc(1rem + 0.25vw);
+    line-height: calc(1.5rem + 0.25vw);
+  }
+
+  .product-price-container {
+    @include utilities.flex(center, flex-start, column);
+    font-size: calc(0.5rem + 0.75vw);
+  }
+
+  .current-price-container {
+    font-size: calc(1rem + 0.75vw);
+  }
+
+  .add-to-cart-container {
+    width: 75%;
+  }
+
+  .add-btn {
+    font-size: calc(0.75rem + 0.25vw);
   }
 }
