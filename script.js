@@ -158,13 +158,35 @@ remove.addEventListener("click", () => {
 // Lightbox
 const lightbox = document.querySelector(".lightbox");
 let productImgs = document.querySelectorAll(".product");
-let lbClose = document.querySelector(".lightbox-close-btn");
+const lbClose = document.querySelector(".lightbox-close-btn");
+let k = 0;
 
 const displayLightbox = () => {
   productImgs.forEach((product) =>
     product.addEventListener("click", () => {
       lightbox.classList.toggle("active");
       overlay.classList.toggle("active");
+      switch (product.id) {
+        case "product1":
+          lightboxImg.src = images[0].src;
+          k = 0;
+          break;
+        case "product2":
+          lightboxImg.src = images[1].src;
+          k = 1;
+          break;
+        case "product3":
+          lightboxImg.src = images[2].src;
+          k = 2;
+          break;
+        case "product4":
+          lightboxImg.src = images[3].src;
+          k = 3;
+          break;
+        default:
+          lightboxImg.src = images[0].src;
+          k = 0;
+      }
     })
   );
 };
@@ -184,22 +206,22 @@ const lbNext = document.querySelector(".lightbox-next-btn");
 // lightboxImg.src=;
 
 const nextLBImage = () => {
-  if (i < images.length - 1) {
-    i++;
-    lightboxImg.src = images[i].src;
+  if (k < images.length - 1) {
+    k++;
+    lightboxImg.src = images[k].src;
   } else {
-    i = 0;
-    lightboxImg.src = images[i].src;
+    k = 0;
+    lightboxImg.src = images[k].src;
   }
 };
 
 const prevLBImage = () => {
-  if (i > 0) {
-    i--;
-    lightboxImg.src = images[i].src;
+  if (k > 0) {
+    k--;
+    lightboxImg.src = images[k].src;
   } else {
-    i = images.length - 1;
-    lightboxImg.src = images[i].src;
+    k = images.length - 1;
+    lightboxImg.src = images[k].src;
   }
 };
 
