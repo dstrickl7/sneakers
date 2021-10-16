@@ -59,7 +59,7 @@
 // Screens >=768px
 @media (min-width: 768px) {
   .nav-container {
-    border-bottom: solid utilities.$dgblue 0.1rem;
+    border-bottom: solid utilities.$gblue 0.1rem;
   }
 
   .navbar {
@@ -88,7 +88,12 @@
 
 // Screens >=1024px
 @media (min-width: 1024px) {
+  header {
+    @include utilities.flex(center, center);
+  }
+
   .nav-container {
+    width: 80vw;
     padding: 2rem 6rem;
   }
 }

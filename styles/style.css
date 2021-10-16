@@ -314,7 +314,7 @@
 
 @media (min-width: 768px) {
   .nav-container {
-    border-bottom: solid #68707d 0.1rem;
+    border-bottom: solid #b6bcc8 0.1rem;
   }
 
   .navbar {
@@ -347,7 +347,15 @@
   }
 }
 @media (min-width: 1024px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
   .nav-container {
+    width: 80vw;
     padding: 2rem 6rem;
   }
 }
@@ -443,6 +451,12 @@
   .thumbnail-img {
     width: 100%;
     object-fit: cover;
+  }
+}
+@media (min-width: 1024px) {
+  .product-section-container {
+    width: 80%;
+    margin: auto;
   }
 }
 .lightbox {

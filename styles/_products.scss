@@ -95,4 +95,8 @@
 
 // Laptop and Desktop layouts
 @media (min-width: 1024px) {
+  .product-section-container {
+    width: 80%;
+    margin: auto;
+  }
 }
