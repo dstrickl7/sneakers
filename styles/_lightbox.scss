@@ -1,15 +1,95 @@
 @use "./utilities";
 
+// mobile layout
 .lightbox {
   display: none;
 }
-.lightbox-close {
-}
-.lightbox-previous {
-}
-.lightbox-next {
-}
-.lightbox-image-container {
-}
-.lightbox-thumbnail-container {
+
+// Desktop layout
+@media (min-width: 1024px) {
+  .lightbox.active {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    img {
+      border-radius: 5%;
+    }
+  }
+
+  .lightbox-container {
+    @include utilities.flex(center, center, column);
+    justify-items: center;
+    position: relative;
+    width: 100%;
+  }
+  .lightbox-container > button {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    top: -5%;
+    right: 30%;
+    width: 1.5rem;
+    height: 1.5rem;
+    svg {
+      width: 100%;
+      height: 100%;
+      path {
+        fill: utilities.$white;
+        &:hover {
+          fill: utilities.$orange;
+        }
+      }
+    }
+  }
+
+  .lightbox-prev-btn {
+    left: 5%;
+  }
+  .lightbox-next-btn {
+    right: 5%;
+  }
+
+  .lightbox-image-container {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    justify-items: center;
+    width: 50%;
+    height: 90vh;
+    position: relative;
+    button {
+      @include utilities.flex(center, center);
+      position: absolute;
+      top: 40%;
+      border-radius: 100%;
+      border: none;
+      width: 3.5rem;
+      height: 3.5rem;
+
+      svg {
+        &:hover {
+          fill: utilities.$orange;
+        }
+      }
+    }
+  }
+
+  .lightbox-main-img {
+    height: 60%;
+  }
+  .lightbox-thumbnail-container {
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .lightbox-thumbnail {
+    width: 20%;
+  }
 }
