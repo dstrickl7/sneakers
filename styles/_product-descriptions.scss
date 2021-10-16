@@ -93,3 +93,11 @@
 .cart-white {
   fill: utilities.$white;
 }
+
+@media (min-width: 768px) {
+  .product-description-section {
+    position: unset;
+    width: 50%;
+    height: 80vh;
+  }
+}
