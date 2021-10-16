@@ -61,6 +61,7 @@
 @media (min-width: 768px) {
   .nav-container {
     border-bottom: solid utilities.$gblue 0.1rem;
+    z-index: 1;
   }
 
   .navbar {

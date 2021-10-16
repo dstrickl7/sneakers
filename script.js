@@ -156,3 +156,52 @@ remove.addEventListener("click", () => {
 });
 
 // Lightbox
+const lightbox = document.querySelector(".lightbox");
+let productImgs = document.querySelectorAll(".product");
+let lbClose = document.querySelector(".lightbox-close-btn");
+
+const displayLightbox = () => {
+  productImgs.forEach((product) =>
+    product.addEventListener("click", () => {
+      lightbox.classList.toggle("active");
+      overlay.classList.toggle("active");
+    })
+  );
+};
+
+lbClose.addEventListener("click", () => {
+  lightbox.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
+
+displayLightbox();
+
+// rotating through image array to display images in lightbox
+let lightboxImg = document.querySelector(".lightbox-main-img");
+const lbPrev = document.querySelector(".lightbox-prev-btn");
+const lbNext = document.querySelector(".lightbox-next-btn");
+
+// lightboxImg.src=;
+
+const nextLBImage = () => {
+  if (i < images.length - 1) {
+    i++;
+    lightboxImg.src = images[i].src;
+  } else {
+    i = 0;
+    lightboxImg.src = images[i].src;
+  }
+};
+
+const prevLBImage = () => {
+  if (i > 0) {
+    i--;
+    lightboxImg.src = images[i].src;
+  } else {
+    i = images.length - 1;
+    lightboxImg.src = images[i].src;
+  }
+};
+
+lbPrev.addEventListener("click", prevLBImage);
+lbNext.addEventListener("click", nextLBImage);

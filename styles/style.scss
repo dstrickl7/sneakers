@@ -30,3 +30,10 @@ body {
   background-color: utilities.$black;
   opacity: 70%;
 }
+
+// Desktop layout
+@media (min-width: 1024px) {
+  .overlay.active {
+    z-index: 10;
+  }
+}
