@@ -102,6 +102,10 @@
   .nav-container {
     width: 80vw;
     padding: 2rem 6rem;
-    font-size: calc(0.5rem + 0.75vw);
+    font-size: calc(1rem + 0.1vw);
+  }
+
+  .navlist {
+    margin-left: calc(1rem + 0.5vw);
   }
 }

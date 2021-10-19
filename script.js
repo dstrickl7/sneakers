@@ -196,7 +196,9 @@ lbClose.addEventListener("click", () => {
   overlay.classList.toggle("active");
 });
 
-displayLightbox();
+if (document.documentElement.clientWidth >= 1024) {
+  displayLightbox();
+}
 
 // rotating through image array to display images in lightbox
 let lightboxImg = document.querySelector(".lightbox-main-img");
