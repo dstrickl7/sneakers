@@ -229,3 +229,36 @@ const prevLBImage = () => {
 
 lbPrev.addEventListener("click", prevLBImage);
 lbNext.addEventListener("click", nextLBImage);
+
+// Open specific image as main image if clicked in lightbox
+let lbImgs = document.querySelectorAll(".lightbox-thumbnail");
+
+const switchLightbox = () => {
+  lbImgs.forEach((image) =>
+    image.addEventListener("click", () => {
+      switch (image.id) {
+        case "lbImg1":
+          lightboxImg.src = images[0].src;
+          k = 0;
+          break;
+        case "lbImg2":
+          lightboxImg.src = images[1].src;
+          k = 1;
+          break;
+        case "lbImg3":
+          lightboxImg.src = images[2].src;
+          k = 2;
+          break;
+        case "lbImg4":
+          lightboxImg.src = images[3].src;
+          k = 3;
+          break;
+        default:
+          lightboxImg.src = images[0].src;
+          k = 0;
+      }
+    })
+  );
+};
+
+switchLightbox();
