@@ -31,6 +31,13 @@ body {
   opacity: 70%;
 }
 
+.selected {
+  opacity: 40%;
+  border: solid utilities.$orange;
+  height: 95%;
+  border-radius: 20%;
+}
+
 // Desktop layout
 @media (min-width: 1024px) {
   .overlay.active {

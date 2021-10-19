@@ -95,6 +95,7 @@
     width: 80%;
     cursor: pointer;
     &:hover {
+      border: solid utilities.$orange;
       background: linear-gradient(
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)

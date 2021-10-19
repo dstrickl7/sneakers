@@ -166,6 +166,9 @@ const displayLightbox = () => {
     product.addEventListener("click", () => {
       lightbox.classList.toggle("active");
       overlay.classList.toggle("active");
+      // Need to add the ability to check if
+      // class name exists on another image
+      product.classList.toggle("selected");
       switch (product.id) {
         case "product1":
           lightboxImg.src = images[0].src;
