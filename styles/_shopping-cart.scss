@@ -217,3 +217,9 @@
     width: 3.5rem;
   }
 }
+
+@media (min-width: 1820px) {
+  .nav-cart {
+    transform: scale(1.5);
+  }
+}
