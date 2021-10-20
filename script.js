@@ -226,8 +226,6 @@ let lightboxImg = document.querySelector(".lightbox-main-img");
 const lbPrev = document.querySelector(".lightbox-prev-btn");
 const lbNext = document.querySelector(".lightbox-next-btn");
 
-// lightboxImg.src=;
-
 const nextLBImage = () => {
   if (k < images.length - 1) {
     k++;
@@ -284,3 +282,12 @@ const switchLightbox = () => {
 };
 
 switchLightbox();
+
+// Keyboard functionality for lightbox
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    nextLBImage();
+  } else if (e.key === "ArrowLeft") {
+    prevLBImage();
+  }
+});
