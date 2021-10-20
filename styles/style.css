@@ -463,24 +463,11 @@
     display: inline;
     position: relative;
   }
-  .product-thumbnail:hover:after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
   .product-thumbnail img {
     cursor: pointer;
   }
   .product-thumbnail img:hover {
     opacity: 60%;
-  }
-
-  .product-thumbnail.active:after {
-    border: solid #ff7d1a;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 20%;
-    content: "";
   }
 
   .thumbnail-container {
@@ -531,9 +518,6 @@
     border: none;
     cursor: pointer;
   }
-  .lightbox-container button svg path:hover {
-    fill: #ff7d1a;
-  }
 
   .lightbox-close-btn {
     background-color: transparent;
@@ -545,6 +529,9 @@
   }
   .lightbox-close-btn svg path {
     fill: white;
+  }
+  .lightbox-close-btn svg path:hover {
+    fill: #ff7d1a;
   }
 
   .lightbox-prev-btn {
@@ -567,14 +554,18 @@
     width: 2.5rem;
     height: 2.5rem;
   }
-  .lightbox-prev-btn svg:hover,
-.lightbox-next-btn svg:hover {
-    fill: #ff7d1a;
+  .lightbox-prev-btn:hover svg path,
+.lightbox-next-btn:hover svg path {
+    stroke: #ff7d1a;
   }
 
   .lightbox-image-container {
     position: relative;
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: normal;
+    align-items: center;
   }
   .lightbox-image-container img {
     border-radius: 5%;
@@ -588,16 +579,23 @@
   .lightbox-thumbnail-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    width: 90%;
     justify-items: center;
+    margin-top: 1rem;
+  }
+
+  .lb-thumbnail-image-container {
+    position: relative;
+    width: 80%;
   }
 
   .lightbox-thumbnail {
-    width: 80%;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
   }
   .lightbox-thumbnail:hover {
     border: solid #ff7d1a;
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
   }
 }
 @media (min-width: 1240px) {
@@ -864,11 +862,16 @@ body {
   opacity: 70%;
 }
 
-.selected {
-  opacity: 40%;
-  border: solid #ff7d1a;
-  height: 95%;
-  border-radius: 20%;
+.selected:after {
+  content: "";
+  width: 93.5%;
+  height: 93%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid 0.2rem #ff7d1a;
+  border-radius: 10%;
 }
 
 @media (min-width: 1024px) {

@@ -253,9 +253,9 @@ lbNext.addEventListener("click", nextLBImage);
 
 // Open specific image as main image if clicked in lightbox
 let lbImgs = document.querySelectorAll(".lightbox-thumbnail");
-
-addOverlay(lbImgs);
+let lbImgCont = document.querySelectorAll(".lb-thumbnail-image-container");
 const switchLightbox = () => {
+  addOverlay(lbImgCont);
   lbImgs.forEach((image) =>
     image.addEventListener("click", () => {
       switch (image.id) {

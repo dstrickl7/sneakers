@@ -26,13 +26,6 @@
       position: absolute;
       border: none;
       cursor: pointer;
-      svg {
-        path {
-          &:hover {
-            fill: utilities.$orange;
-          }
-        }
-      }
     }
   }
 
@@ -44,6 +37,9 @@
       transform: scale(1.5);
       path {
         fill: utilities.$white;
+        &:hover {
+          fill: utilities.$orange;
+        }
       }
     }
   }
@@ -64,10 +60,11 @@
     border-radius: 100%;
     width: 2.5rem;
     height: 2.5rem;
-
-    svg {
-      &:hover {
-        fill: utilities.$orange;
+    &:hover {
+      svg {
+        path {
+          stroke: utilities.$orange;
+        }
       }
     }
   }
@@ -75,6 +72,7 @@
   .lightbox-image-container {
     position: relative;
     width: 60%;
+    @include utilities.flex(normal, center, column);
     img {
       border-radius: 5%;
     }
@@ -88,18 +86,22 @@
   .lightbox-thumbnail-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    width: 90%;
     justify-items: center;
+    margin-top: 1rem;
+  }
+
+  .lb-thumbnail-image-container {
+    position: relative; //To position the overlay
+    width: 80%;
   }
 
   .lightbox-thumbnail {
-    width: 80%;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     &:hover {
       border: solid utilities.$orange;
-      background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      );
     }
   }
 }
