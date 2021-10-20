@@ -161,14 +161,32 @@ let productImgs = document.querySelectorAll(".product");
 const lbClose = document.querySelector(".lightbox-close-btn");
 let k = 0;
 
+// Start function to add image overlay
+const checkForSelected = (x) => {
+  x.forEach((container) => {
+    if (container.className.includes("selected")) {
+      container.classList.remove("selected");
+    }
+  });
+};
+
+const addOverlay = (x) => {
+  x.forEach((container) => {
+    container.addEventListener("click", () => {
+      checkForSelected(x);
+      container.classList.toggle("selected");
+    });
+  });
+};
+// End function to add image overlay
+
 const displayLightbox = () => {
-  productImgs.forEach((product) =>
+  addOverlay(productImgs);
+  productImgs.forEach((product) => {
     product.addEventListener("click", () => {
       lightbox.classList.toggle("active");
       overlay.classList.toggle("active");
-      // Need to add the ability to check if
-      // class name exists on another image
-      product.classList.toggle("selected");
+
       switch (product.id) {
         case "product1":
           lightboxImg.src = images[0].src;
@@ -190,8 +208,8 @@ const displayLightbox = () => {
           lightboxImg.src = images[0].src;
           k = 0;
       }
-    })
-  );
+    });
+  });
 };
 
 lbClose.addEventListener("click", () => {
@@ -236,6 +254,7 @@ lbNext.addEventListener("click", nextLBImage);
 // Open specific image as main image if clicked in lightbox
 let lbImgs = document.querySelectorAll(".lightbox-thumbnail");
 
+addOverlay(lbImgs);
 const switchLightbox = () => {
   lbImgs.forEach((image) =>
     image.addEventListener("click", () => {
