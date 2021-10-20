@@ -212,10 +212,12 @@ const displayLightbox = () => {
   });
 };
 
-lbClose.addEventListener("click", () => {
+const closeLightbox = () => {
   lightbox.classList.toggle("active");
   overlay.classList.toggle("active");
-});
+};
+
+lbClose.addEventListener("click", closeLightbox);
 
 if (document.documentElement.clientWidth >= 1024) {
   displayLightbox();
@@ -289,5 +291,11 @@ document.addEventListener("keydown", (e) => {
     nextLBImage();
   } else if (e.key === "ArrowLeft") {
     prevLBImage();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeLightbox();
   }
 });
