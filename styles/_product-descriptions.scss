@@ -121,7 +121,7 @@
       width: 1.5rem;
       @include utilities.flex(center, center);
       margin: 0.45rem;
-      &:active {
+      &:hover {
         opacity: 70%;
       }
     }

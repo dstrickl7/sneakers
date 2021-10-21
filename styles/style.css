@@ -756,7 +756,7 @@
     align-items: center;
     margin: 0.45rem;
   }
-  .item-count-container button:active {
+  .item-count-container button:hover {
     opacity: 70%;
   }
 

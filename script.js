@@ -156,169 +156,174 @@ remove.addEventListener("click", () => {
 });
 
 // Lightbox
-const lightbox = document.querySelector(".lightbox");
-let productImgs = document.querySelectorAll(".product");
-const lbClose = document.querySelector(".lightbox-close-btn");
-let lbImgs = document.querySelectorAll(".lightbox-thumbnail");
-let lbImgCont = document.querySelectorAll(".lb-thumbnail-image-container");
 
-let k = 0;
+const lightboxFunc = () => {
+  const lightbox = document.querySelector(".lightbox");
+  let productImgs = document.querySelectorAll(".product");
+  const lbClose = document.querySelector(".lightbox-close-btn");
+  let lbImgs = document.querySelectorAll(".lightbox-thumbnail");
+  let lbImgCont = document.querySelectorAll(".lb-thumbnail-image-container");
 
-// Start function to add image overlay
-const checkForSelected = (x) => {
-  x.forEach((container) => {
-    if (container.className.includes("selected")) {
-      container.classList.remove("selected");
-    }
-  });
-};
+  let k = 0;
 
-const addOverlay = (x) => {
-  x.forEach((container) => {
-    container.addEventListener("click", () => {
-      checkForSelected(x);
-      container.classList.toggle("selected");
-    });
-  });
-};
-// End function to add image overlay
-
-// Function to simulate a click event on a lightbox image
-const getLBImgId = (x) => {
-  lbImgs.forEach((image) => {
-    if (image.id == x) {
-      image.click();
-    }
-  });
-};
-
-// Function to display lightbox from product img click
-const displayLightbox = () => {
-  addOverlay(productImgs);
-  addOverlay(lbImgCont);
-  productImgs.forEach((product) => {
-    product.addEventListener("click", () => {
-      lightbox.classList.toggle("active");
-      overlay.classList.toggle("active");
-
-      switch (product.id) {
-        case "product1":
-          lightboxImg.src = images[0].src;
-          k = 0;
-          getLBImgId("lbImg1");
-          break;
-        case "product2":
-          lightboxImg.src = images[1].src;
-          k = 1;
-          getLBImgId("lbImg2");
-          break;
-        case "product3":
-          lightboxImg.src = images[2].src;
-          k = 2;
-          getLBImgId("lbImg3");
-          break;
-        case "product4":
-          lightboxImg.src = images[3].src;
-          getLBImgId("lbImg4");
-          k = 3;
-          break;
-        default:
-          lightboxImg.src = images[0].src;
-          k = 0;
-          getLBImgId("lbImg1");
+  // Start function to add image overlay
+  const checkForSelected = (x) => {
+    x.forEach((container) => {
+      if (container.className.includes("selected")) {
+        container.classList.remove("selected");
       }
     });
+  };
+
+  const addOverlay = (x) => {
+    x.forEach((container) => {
+      container.addEventListener("click", () => {
+        checkForSelected(x);
+        container.classList.toggle("selected");
+      });
+    });
+  };
+  // End function to add image overlay
+
+  // Function to simulate a click event on a lightbox image
+  const getLBImgId = (x) => {
+    lbImgs.forEach((image) => {
+      if (image.id == x) {
+        image.click();
+      }
+    });
+  };
+
+  // Function to display lightbox from product img click
+  const displayLightbox = () => {
+    addOverlay(productImgs);
+    addOverlay(lbImgCont);
+    productImgs.forEach((product) => {
+      product.addEventListener("click", () => {
+        lightbox.classList.toggle("active");
+        overlay.classList.toggle("active");
+
+        switch (product.id) {
+          case "product1":
+            lightboxImg.src = images[0].src;
+            k = 0;
+            getLBImgId("lbImg1");
+            break;
+          case "product2":
+            lightboxImg.src = images[1].src;
+            k = 1;
+            getLBImgId("lbImg2");
+            break;
+          case "product3":
+            lightboxImg.src = images[2].src;
+            k = 2;
+            getLBImgId("lbImg3");
+            break;
+          case "product4":
+            lightboxImg.src = images[3].src;
+            getLBImgId("lbImg4");
+            k = 3;
+            break;
+          default:
+            lightboxImg.src = images[0].src;
+            k = 0;
+            getLBImgId("lbImg1");
+        }
+      });
+    });
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.toggle("active");
+    overlay.classList.toggle("active");
+  };
+
+  lbClose.addEventListener("click", closeLightbox);
+
+  // Open specific image as main image if clicked in lightbox
+  // variables used:
+  // lbImgs
+  // lbImgCont
+
+  const switchLightbox = () => {
+    lbImgs.forEach((image) =>
+      image.addEventListener("click", () => {
+        switch (image.id) {
+          case "lbImg1":
+            lightboxImg.src = images[0].src;
+            k = 0;
+            break;
+          case "lbImg2":
+            lightboxImg.src = images[1].src;
+            k = 1;
+            break;
+          case "lbImg3":
+            lightboxImg.src = images[2].src;
+            k = 2;
+            break;
+          case "lbImg4":
+            lightboxImg.src = images[3].src;
+            k = 3;
+            break;
+          default:
+            lightboxImg.src = images[0].src;
+            k = 0;
+        }
+      })
+    );
+  };
+
+  displayLightbox();
+  switchLightbox();
+
+  // rotating through image array to display images in lightbox
+  let lightboxImg = document.querySelector(".lightbox-main-img");
+  const lbPrev = document.querySelector(".lightbox-prev-btn");
+  const lbNext = document.querySelector(".lightbox-next-btn");
+
+  const nextLBImage = () => {
+    if (k < images.length - 1) {
+      k++;
+      lightboxImg.src = images[k].src;
+      getLBImgId("lbImg" + String(k + 1));
+    } else {
+      k = 0;
+      lightboxImg.src = images[k].src;
+      getLBImgId("lbImg" + String(k + 1));
+    }
+  };
+
+  const prevLBImage = () => {
+    if (k > 0) {
+      k--;
+      lightboxImg.src = images[k].src;
+      getLBImgId("lbImg" + String(k + 1));
+    } else {
+      k = images.length - 1;
+      lightboxImg.src = images[k].src;
+      getLBImgId("lbImg" + String(k + 1));
+    }
+  };
+
+  lbPrev.addEventListener("click", prevLBImage);
+  lbNext.addEventListener("click", nextLBImage);
+
+  // Keyboard functionality for lightbox
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") {
+      nextLBImage();
+    } else if (e.key === "ArrowLeft") {
+      prevLBImage();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
   });
 };
-
-const closeLightbox = () => {
-  lightbox.classList.toggle("active");
-  overlay.classList.toggle("active");
-};
-
-lbClose.addEventListener("click", closeLightbox);
 
 if (document.documentElement.clientWidth >= 1024) {
-  displayLightbox();
+  lightboxFunc();
 }
-
-// Open specific image as main image if clicked in lightbox
-// variables used:
-// lbImgs
-// lbImgCont
-
-const switchLightbox = () => {
-  lbImgs.forEach((image) =>
-    image.addEventListener("click", () => {
-      switch (image.id) {
-        case "lbImg1":
-          lightboxImg.src = images[0].src;
-          k = 0;
-          break;
-        case "lbImg2":
-          lightboxImg.src = images[1].src;
-          k = 1;
-          break;
-        case "lbImg3":
-          lightboxImg.src = images[2].src;
-          k = 2;
-          break;
-        case "lbImg4":
-          lightboxImg.src = images[3].src;
-          k = 3;
-          break;
-        default:
-          lightboxImg.src = images[0].src;
-          k = 0;
-      }
-    })
-  );
-};
-
-switchLightbox();
-// rotating through image array to display images in lightbox
-let lightboxImg = document.querySelector(".lightbox-main-img");
-const lbPrev = document.querySelector(".lightbox-prev-btn");
-const lbNext = document.querySelector(".lightbox-next-btn");
-
-const nextLBImage = () => {
-  if (k < images.length - 1) {
-    k++;
-    lightboxImg.src = images[k].src;
-    getLBImgId("lbImg" + String(k + 1));
-  } else {
-    k = 0;
-    lightboxImg.src = images[k].src;
-    getLBImgId("lbImg" + String(k + 1));
-  }
-};
-
-const prevLBImage = () => {
-  if (k > 0) {
-    k--;
-    lightboxImg.src = images[k].src;
-    getLBImgId("lbImg" + String(k + 1));
-  } else {
-    k = images.length - 1;
-    lightboxImg.src = images[k].src;
-    getLBImgId("lbImg" + String(k + 1));
-  }
-};
-
-lbPrev.addEventListener("click", prevLBImage);
-lbNext.addEventListener("click", nextLBImage);
-
-// Keyboard functionality for lightbox
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowRight") {
-    nextLBImage();
-  } else if (e.key === "ArrowLeft") {
-    prevLBImage();
-  }
-});
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeLightbox();
-  }
-});
