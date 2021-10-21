@@ -15,7 +15,6 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 ## Overview
@@ -94,7 +93,7 @@ const displayLightbox = () => {
 
 - Lightbox 
   - Responsiveness - my initial layout only looked good on 1440px screens.
-    -My solution: I reworked it and used CSS Grid to make it responsive on all desktop sizes
+    - My solution: I reworked it and used CSS Grid to make it responsive on all desktop sizes
 - Overlay for active images 
   - I wanted to use a div overlay, but couldn't figure out how to only activate one when an image was clicked. Since I used the same class name for all the overlays, when I added the active class, all the overlay divs became active. 
     - My solution: I switched to using a class and psuedo element, but ran into the issue of the border radius for my images being different. In order to make the overlay look reasonable, I split the difference in radius percentages and shrank the height and width.
@@ -115,6 +114,6 @@ const displayLightbox = () => {
 
 ## Author
 
-- Website - [Curly Coder](https://www.curlycode.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [Curly Coder](https://www.curlycoder.com)
+- Frontend Mentor - [@dstrickl7](https://www.frontendmentor.io/profile/dstrickl7)
 - Github - [dstrickl7](https://github.com/dstrickl7)
