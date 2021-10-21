@@ -315,7 +315,6 @@
 .nav-item {
   list-style: none;
   padding: 0.5rem 0;
-  font-weight: 700;
 }
 
 .navlink {
@@ -867,6 +866,15 @@ body {
   left: 0;
   border: solid 0.2rem #ff7d1a;
   border-radius: 10%;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 @media (min-width: 1024px) {

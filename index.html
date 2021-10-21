@@ -26,18 +26,18 @@
 
       <span class="logo-container">
         <!-- Open nav button -->
-        <button>
+        <button name="open-menu">
           <img src="styles/images/icon-menu.svg" alt="open menu" class="hamburger" id="hamburger">
         </button>
         <img src="styles/images/logo.svg" alt="Sneakers" class="logo">
       </span>
-      <span class="cart-container">
+      <div class="cart-container">
 
         <div class="cart-button-container">
           <!-- Notification container -->
           <div class="notification"></div>
           <!-- Shopping cart button -->
-          <button class="nav-cart">
+          <button name="shopping-cart" class="nav-cart">
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
               <path class="cart-black"
                 d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
@@ -48,7 +48,7 @@
 
         <!-- User image -->
         <img src="styles/images/image-avatar.png" alt="user picture" class="avatar">
-      </span>
+      </div>
       <!-- shopping cart begins -->
       <div class="shopping-cart-container">
         <div class="shopping-cart">
@@ -68,7 +68,7 @@
                 </div>
               </div>
 
-              <button class="delete" id="remove">
+              <button name="delete-item" class="delete" id="remove">
                 <img src="styles/images/icon-delete.svg" alt="delete">
               </button>
             </div>
@@ -80,7 +80,7 @@
       <!-- shopping cart ends -->
       <nav class="navbar">
         <!-- Close nav button -->
-        <button>
+        <button name="close-menu">
           <img src="styles/images/icon-close.svg" alt="close menu" class="close" id="close">
         </button>
         <ul class="navlist">
@@ -110,9 +110,11 @@
     <!-- Product images section begins-->
     <div class="product-section-container">
       <section class="product-images">
-        <article class="product product-main" id="product1">
+        <h1 class="sr-only">Product Images</h1>
+        <article class="product product-main" id="main-product">
+          <h2 class="sr-only">Main Product Image</h2>
           <!-- Previous button -->
-          <button class="left" id="leftArrow">
+          <button name="previous-image" class="left" id="leftArrow">
             <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
               <path class="previous" d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none"
                 fill-rule="evenodd" />
@@ -121,7 +123,7 @@
           <!-- Main product image -->
           <img src="styles/images/image-product-1.jpg" alt="" class="main-img" id="mainImg">
           <!-- Next button -->
-          <button class="right" id="rightArrow">
+          <button name="next-image" class="right" id="rightArrow">
             <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
               <path class="next" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
             </svg>
@@ -129,18 +131,22 @@
         </article>
         <div class="thumbnail-container">
           <article class="product product-thumbnail selected" id="product1">
+            <h2 class="sr-only">Product Image 1</h2>
             <img src="styles/images/image-product-1-thumbnail.jpg" alt="pair of tan and white shoes with one upright"
               class="thumbnail-img">
           </article>
           <article class="product product-thumbnail" id="product2">
+            <h2 class="sr-only">Product Image 2</h2>
             <img src="styles/images/image-product-2-thumbnail.jpg"
               alt="pair of tan and white shoes with one standing on two rocks" class="thumbnail-img">
           </article>
           <article class="product product-thumbnail" id="product3">
+            <h2 class="sr-only">Product Image 3</h2>
             <img src="styles/images/image-product-3-thumbnail.jpg"
               alt="one tan and white shoe, facing right, displayed on two rocks" class="thumbnail-img">
           </article>
           <article class="product product-thumbnail" id="product4">
+            <h2 class="sr-only">Product Image 4</h2>
             <img src="styles/images/image-product-4-thumbnail.jpg"
               alt="one tan and white shoe, facing left, displayed on two rocks" class="thumbnail-img">
           </article>
@@ -167,12 +173,13 @@
         </div>
         <!-- Price container ends -->
         <!-- Start add to cart option-->
-        <span class="add-to-cart-container">
+        <div class="add-to-cart-container">
           <div class="item-count-container">
-            <button class="decrease" id="decreaseItem"><img src="styles/images/icon-minus.svg"
+            <button name="subtract-item" class="decrease" id="decreaseItem"><img src="styles/images/icon-minus.svg"
                 alt="subtract item"></button>
             <div class="number-display" id="numDisplay"></div>
-            <button class="increase" id="increaseItem"><img src="styles/images/icon-plus.svg" alt="add item"></button>
+            <button name="increase-item" class="increase" id="increaseItem"><img src="styles/images/icon-plus.svg"
+                alt="add item"></button>
           </div>
           <!-- End add to cart option-->
           <button class="add-btn" id="addBtn">
@@ -184,7 +191,7 @@
             </svg>
             Add to cart
           </button>
-        </span>
+        </div>
       </section>
       <!-- Product description section ends -->
     </div>
@@ -196,7 +203,7 @@
         <!-- Displayed image begin -->
         <div class="lightbox-image-container">
           <!-- Close lightbox button -->
-          <button class="lightbox-close-btn">
+          <button name="close-image-viewer" class="lightbox-close-btn">
             <svg height="14" width="15" xmlns="http://www.w3.org/2000/svg">
               <path class="lightbox-close"
                 d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
@@ -204,7 +211,7 @@
             </svg>
           </button>
           <!-- Lightbox previous button -->
-          <button class="lightbox-prev-btn">
+          <button name="previous-picture" class="lightbox-prev-btn">
             <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
               <path class="lightbox-previous" d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none"
                 fill-rule="evenodd" />
@@ -214,7 +221,7 @@
           <img src="styles/images/image-product-1.jpg" class="lightbox-main-img" id="lightbox-img"
             alt="pair of tan and white shoes with one upright">
           <!-- Lightbox next button -->
-          <button class="lightbox-next-btn">
+          <button name="next-picture" class="lightbox-next-btn">
             <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
               <path class="lightbox-next" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none"
                 fill-rule="evenodd" />
@@ -222,20 +229,25 @@
           </button>
           <!-- lightbox thumbnails -->
           <div class="lightbox-thumbnail-container">
+
             <article class="lb-thumbnail-image-container">
+              <h2 class="sr-only">Product viewer Image 1</h2>
               <img src="styles/images/image-product-1-thumbnail.jpg" alt="pair of tan and white shoes with one upright"
                 class="lightbox-thumbnail" id="lbImg1">
             </article>
             <article class="lb-thumbnail-image-container">
+              <h2 class="sr-only">Product viewer Image 2</h2>
               <img src="styles/images/image-product-2-thumbnail.jpg"
                 alt="pair of tan and white shoes with one standing on two rocks" class="lightbox-thumbnail" id="lbImg2">
             </article>
             <article class="lb-thumbnail-image-container">
+              <h2 class="sr-only">Product viewer Image 3</h2>
               <img src="styles/images/image-product-3-thumbnail.jpg"
                 alt="one tan and white shoe, facing right, displayed on two rocks" class="lightbox-thumbnail"
                 id="lbImg3">
             </article>
             <article class="lb-thumbnail-image-container">
+              <h2 class="sr-only">Product viewer Image 4</h2>
               <img src="styles/images/image-product-4-thumbnail.jpg"
                 alt="one tan and white shoe, facing left, displayed on two rocks" class="lightbox-thumbnail"
                 id="lbImg4">
@@ -250,7 +262,8 @@
     <!-- Lightbox ends -->
 
   </main>
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
+
 
 </html>
