@@ -10,10 +10,10 @@
   padding: 1.25rem;
   @include utilities.flex(space-between, center);
   z-index: 10;
-  button {
-    background-color: transparent;
-    border: none;
-  }
+  // button {
+  //   background-color: transparent;
+  //   border: none;
+  // }
 }
 
 .navbar {
@@ -23,7 +23,7 @@
 .navbar.active {
   @include utilities.flex(normal, flex-start, column);
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 2;
@@ -66,10 +66,6 @@
   .navbar {
     @include utilities.flex(flex-start, center, row);
     width: 80%;
-  }
-
-  .close {
-    display: none;
   }
 
   .navlist {

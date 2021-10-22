@@ -259,6 +259,10 @@
   .cart-thumbnail {
     width: 3.5rem;
   }
+
+  .notification.active {
+    z-index: 2;
+  }
 }
 @media (min-width: 1820px) {
   .nav-cart {
@@ -275,10 +279,6 @@
   align-items: center;
   z-index: 10;
 }
-.nav-container button {
-  background-color: transparent;
-  border: none;
-}
 
 .navbar {
   display: none;
@@ -290,7 +290,7 @@
   justify-content: normal;
   align-items: flex-start;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 2;
@@ -335,10 +335,6 @@
     justify-content: flex-start;
     align-items: center;
     width: 80%;
-  }
-
-  .close {
-    display: none;
   }
 
   .navlist {
@@ -846,7 +842,7 @@ body {
 
 .overlay.active {
   display: inline;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

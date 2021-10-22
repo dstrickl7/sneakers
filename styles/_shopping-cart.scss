@@ -216,6 +216,10 @@
   .cart-thumbnail {
     width: 3.5rem;
   }
+
+  .notification.active {
+    z-index: 2;
+  }
 }
 
 @media (min-width: 1820px) {
